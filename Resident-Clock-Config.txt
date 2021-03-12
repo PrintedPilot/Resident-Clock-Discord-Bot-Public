@@ -1,1 +1,1 @@
-{"general": [{"bot_token": "0OPPkdQKgvk2nPagT-RWlXw2qRA6_QsR"}, {"OwnerID": "201715919439790080"}, {"WeatherAPI": "c7980b82f9971c63934041ed8036a20e"}, {"AQI_API": "67da4d2aff077a61c582d4e5ca5bac36972490f5"} ]}
+{"general": [{"bot_token": "Nzk5Nzg3OTQ1MzcxNzYyNzA5.YAIqkQ.7QzcCVvdRzTWD2V-xGMTDAHbPK4"}, {"OwnerID": "201715919439790080"}, {"WeatherAPI": "c7980b82f9971c63934041ed8036a20e"}, {"AQI_API": "67da4d2aff077a61c582d4e5ca5bac36972490f5"} ]}
