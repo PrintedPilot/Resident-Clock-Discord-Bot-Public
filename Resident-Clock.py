@@ -131,7 +131,7 @@ async def clocktower():
                 if x['ClockChannel'] is not None: #only attempt to write to a server's channels if a channel is selected
                     channel = bot.get_channel(x['ClockChannel']) #get the channel to write to
                     now += datetime.timedelta(hours=int(x["Timezone"])) #get the time
-                    await channel.edit(name=now.strftime("Time: %#I:%M %p, %a (") + timezoneget(int(x["Timezone"])*3600) + ")") #edits the selected channel's name to get a printout of the time
+                    await channel.edit(name=now.strftime("Time: %-I:%M %p, %a (") + timezoneget(int(x["Timezone"])*3600) + ")") #edits the selected channel's name to get a printout of the time
                     await asyncio.sleep(299) # only run the command once every 5 minutes after a successful channel name change
         await asyncio.sleep(1) # keep pinging every second until we get a successful time change. A bit impractical, but necesarry for accurate time.
 
@@ -362,7 +362,7 @@ async def time(ctx, arg: str = None):
 
     now += datetime.timedelta(seconds=response.json()["city"]["timezone"])
 
-    embedVar = discord.Embed(title=("Current Time:"), description=(now.strftime("**%#I:%M:%S %p**\n**%a, %#d/%#m/%Y**")), color=0x404040)
+    embedVar = discord.Embed(title=("Current Time:"), description=(now.strftime("**%-I:%M:%S %p**\n**%a, %-d/%-m/%Y**")), color=0x404040)
     embedVar.add_field(name="Location: ", value=(response.json()["city"]["name"] + "\n" + response.json()["city"]["country"]), inline=True)
     embedVar.add_field(name="Timezone:", value=(timezoneget(response.json()["city"]["timezone"]) + "\nOffset: " + str(response.json()["city"]["timezone"])), inline=True)
 
@@ -792,7 +792,7 @@ async def forecast(ctx, arg1: str = None, arg2: str = None):
                     # fog
                     Emoji = ":fog:"
 
-                Title = (Date.strftime("%#I:%M %p: ") + Emoji)
+                Title = (Date.strftime("%-I:%M %p: ") + Emoji)
                 # Prints Emoji and Weather Description Values
                 Desc = ("Weather:   " + WeatherDesc + '\n')
                 # Gets the temperature and converts it from Kelvin to Celsius
@@ -970,21 +970,25 @@ async def changedefault(ctx, defaultType, newDefault):
 
 #Requires Admin, enables assignment of a clocktower channel
 @bot.command(name="clocktower")
-async def assigntime(ctx, channelID: discord.VoiceChannel, offset):
+async def assigntime(ctx, channelID, offset):
     #This command will allow admins to set the timezone and channel to update for the bot's clock function
     if (str(ctx.message.author.id) == str(OwnerID)) or (ctx.message.author.mention == discord.Permissions.administrator):
         with open('Resident-Clock-Defaults.txt') as json_file:
             data = json.load(json_file)
         print("file opened, proceeding to check server lists")
         for idx, d in enumerate(data['per_server']):
-            print(d['serverID'])
-            print(ctx.message.guild.id)
+            #print(d['serverID'])
+            #print(ctx.message.guild.id)
             if d['serverID'] == ctx.message.guild.id:
-                data['per_server'][idx]['Timezone'] = int(offset)
-                data['per_server'][idx]['ClockChannel'] = int(channelID)
+                data['per_server'][idx]['Timezone'] = offset
+                if channelID.lower() == "none":
+                    data['per_server'][idx]['ClockChannel'] = None
+                else:
+                    data['per_server'][idx]['ClockChannel'] = channelID
         with open('Resident-Clock-Defaults.txt', 'w') as outfile:
             json.dump(data, outfile)
-        embedVar = discord.Embed(title="Added Clock Tower:", description=(channelID + ", " + offset), color=0x02f513)
+            print("wrote to file")
+        embedVar = discord.Embed(title="Added Clock Tower:", description=(str(channelID) + ", " + str(offset)), color=0x02f513)
         await ctx.send(embed=embedVar)
     else:
         ctx.send("You lack the required permissions to change these settings. Please contact an Admin for help.")
