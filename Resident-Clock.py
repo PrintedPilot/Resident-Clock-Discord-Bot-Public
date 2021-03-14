@@ -144,7 +144,7 @@ def timezoneget(offset):
         -10: "HST",
         -9: "AKST",
         -8: "PST",
-        -7: "MST",
+        -7: "PDT",
         -6: "CST",
         -5: "EST",
         -4: "AST",
