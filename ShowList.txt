@@ -1,1 +1,0 @@
-{"tally": 11, "show": [{"name": "Code Geass"}, {"name": "Devil is a Part Timer"}, {"name": "One Punch Man"}, {"name": "My Hero Academia"}, {"name": "Sirius the Jaeger"}, {"name": "Bunny Girl Senpai"}, {"name": "God of Highschool"}, {"name": "Tonikawa: Over The Moon For You"}, {"name": "Mob Psycho 100"}, {"name": "Kill-La-Kill"}, {"name": "Attack on Titan"}]}
