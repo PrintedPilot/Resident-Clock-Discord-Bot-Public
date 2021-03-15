@@ -1,4 +1,0 @@
-mee6_py_api
-asyncio
-requests
-discord
