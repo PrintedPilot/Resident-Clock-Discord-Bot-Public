@@ -24,7 +24,8 @@ This Discord bot relies on several important files imperative to its functionali
 ### Resident-Clock-Help.txt:
 
 	Resident Clock Help contains a list that documents each command's functionality, and includes several sections in each element in the list which are
-	used as a means to generate help commands should the user require assistance. Modifying the text in this file will directly influence the output that the bot provides to a user, when they call "!help <command name>"
+	used as a means to generate help commands should the user require assistance. Modifying the text in this file will directly influence the output that
+	the bot provides to a user, when they call "!help <command name>"
 
 ### Resident-Clock-Quotes.txt:
 
