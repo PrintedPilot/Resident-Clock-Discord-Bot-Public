@@ -1,1 +1,0 @@
-{"show": [{"name": "Konosuba"}, {"name": "Full Metal Alchemist"}, {"name": "Sakurasou"}, {"name": "Jojo's Bizarre Adventure"}, {"name": "Your Name"}, {"name": "Ace Attorney"}]}
