@@ -2,10 +2,10 @@
 # Please ensure the following files exist and are correctly formatted so that the bot can function as intended:
 ###
 
-# Resident-Clock-Config.txt         - Provides all the important mandatory data points, described on line 25
-# Resident-Clock-Defaults.txt       - Default values for each server to customize defaults like what city to default the forecast command to
-# Resident-Clock-Help.txt           - Contains data to print all command helpers
-# Resident-Clock-Quotes.txt         - (Optional) contains an internally expandable list containing an assortment of witty quotes the bot can say
+# Resident-Clock-Config.json         - Provides all the important mandatory data points, described on line 25
+# Resident-Clock-Defaults.json       - Default values for each server to customize defaults like what city to default the forecast command to
+# Resident-Clock-Help.json           - Contains data to print all command helpers
+# Resident-Clock-Quotes.json         - (Optional) contains an internally expandable list containing an assortment of witty quotes the bot can say
 
 
 ################# Import section ################
@@ -30,7 +30,7 @@ from discord.ext import commands
 
 
 # These are defaults for certain commands
-with open('Resident-Clock-Config.txt') as json_file:
+with open('Resident-Clock-Config.json') as json_file:
     data = json.load(json_file)
     Bot_Token = data['general'][0]['bot_token']       #bot token that belongs to the bot
     OwnerID = data['general'][1]['OwnerID']           #ID of the bot owner, used to enable a non-admin bot owner to modify bot settings
@@ -39,7 +39,7 @@ with open('Resident-Clock-Config.txt') as json_file:
 
 #Used during initialization, is used to preform a clean sweep of the "defaults" file and make sure that each server has a list of usable data
 #this is done for future-proofing, to make sure that all new bot commands have their required default values consistently updated.
-with open('Resident-Clock-Defaults.txt') as json_file:
+with open('Resident-Clock-Defaults.json') as json_file:
     data = json.load(json_file)
     list = data['per_server']
     for idx, d in enumerate(list):
@@ -63,7 +63,7 @@ with open('Resident-Clock-Defaults.txt') as json_file:
         print("All files good, continuing-")
 
         data['per_server'][idx] = d
-        with open('Resident-Clock-Defaults.txt', 'w') as outfile:
+        with open('Resident-Clock-Defaults.json', 'w') as outfile:
             json.dump(data, outfile)
 
 #commands are not case sensitive, help command is handled by custom code. Commands are prefixed by "!"
@@ -85,7 +85,7 @@ async def on_command_error(ctx, error):
 @bot.event
 async def on_guild_join(guild):
     #create the appropriate file set to store server-specific data
-    with open('Resident-Clock-Defaults.txt') as json_file:
+    with open('Resident-Clock-Defaults.json') as json_file:
         data = json.load(json_file)
         newserverdefaults = {
             'serverID': guild.id,
@@ -96,7 +96,7 @@ async def on_guild_join(guild):
         }
 
         data['per_server'].append(newserverdefaults)
-        with open('Resident-Clock-Defaults.txt', 'w') as outfile:
+        with open('Resident-Clock-Defaults.json', 'w') as outfile:
             json.dump(data, outfile)
 
     #Find the first accessible channel and spout the generic "Welcome message" all bots need to say for some reason.
@@ -113,7 +113,7 @@ async def on_guild_join(guild):
 
 # used to snag a default-value for each server.
 def defaultGet(defaultType: str, serverID: str):
-    with open('Resident-Clock-Defaults.txt') as json_file:
+    with open('Resident-Clock-Defaults.json') as json_file:
         data = json.load(json_file)
         list = data['per_server']
         for d in list:
@@ -125,7 +125,7 @@ async def clocktower():
     while True:
         now = datetime.datetime.utcnow()
         if (now.minute%5 == 0) and now.second >= 0 and now.second <= 1: #only print at the start of every 5 minute interval
-            with open('Resident-Clock-Defaults.txt') as json_file:
+            with open('Resident-Clock-Defaults.json') as json_file:
                 data = json.load(json_file)
             for x in data['per_server']:
                 if x['ClockChannel'] is not None: #only attempt to write to a server's channels if a channel is selected
@@ -767,7 +767,7 @@ async def forecast(ctx, arg1: str = None, arg2: str = None):
 #generator to print all or specific help commands
 @bot.command(name='help')
 async def help(ctx, arg: str = None):
-    with open('Resident-Clock-Help.txt') as json_file:
+    with open('Resident-Clock-Help.json') as json_file:
         data = json.load(json_file)
     if arg is None:
         embedVar = discord.Embed(title="Resident cLock Commands List", color=0xFFFF00)
@@ -788,10 +788,10 @@ async def help(ctx, arg: str = None):
         embedVar = discord.Embed(description="The command you've entered could not be found.", color=0xFF0000)
         await ctx.send(embed=embedVar)
 
-#Bot will spit out a random quote from a list of supplied quotes from "Resident-Clock-Quotes.txt"
+#Bot will spit out a random quote from a list of supplied quotes from "Resident-Clock-Quotes.json"
 @bot.command(name='quote')
 async def quote(ctx):
-    with open('Resident-Clock-Quotes.txt', "r") as json_file:
+    with open('Resident-Clock-Quotes.json', "r") as json_file:
         data = json.load(json_file)
         temp = data['quotes']
         quotenum = len(temp)
@@ -856,7 +856,7 @@ async def changedefault(ctx, defaultType, newDefault):
         return
     # This command will allow admins to set the timezone and channel to update for the bot's clock function
     if (str(ctx.message.author.id) == str(OwnerID)) or (ctx.message.author.mention == discord.Permissions.administrator):
-        with open('Resident-Clock-Defaults.txt') as json_file:
+        with open('Resident-Clock-Defaults.json') as json_file:
             data = json.load(json_file)
         for idx, d in enumerate(data['per_server']):
             if d['serverID'] == ctx.message.guild.id:
@@ -865,7 +865,7 @@ async def changedefault(ctx, defaultType, newDefault):
                 else:
                     temp = data['per_server'][idx][defaultType]
                     data['per_server'][idx][defaultType] = newDefault
-        with open('Resident-Clock-Defaults.txt', 'w') as outfile:
+        with open('Resident-Clock-Defaults.json', 'w') as outfile:
             json.dump(data, outfile)
         embedVar = discord.Embed(title="Default Value Altered:", description=("**" + defaultType + "**\nOld: " + temp + "\nNew: " + str(newDefault)), color=0x02f513)
         await ctx.send(embed=embedVar)
@@ -879,7 +879,7 @@ async def changedefault(ctx, defaultType, newDefault):
 async def assigntime(ctx, channelID, offset):
     #This command will allow admins to set the timezone and channel to update for the bot's clock function
     if (str(ctx.message.author.id) == str(OwnerID)) or (ctx.message.author.mention == discord.Permissions.administrator):
-        with open('Resident-Clock-Defaults.txt') as json_file:
+        with open('Resident-Clock-Defaults.json') as json_file:
             data = json.load(json_file)
         print("file opened, proceeding to check server lists")
         for idx, d in enumerate(data['per_server']):
@@ -891,7 +891,7 @@ async def assigntime(ctx, channelID, offset):
                     data['per_server'][idx]['ClockChannel'] = None
                 else:
                     data['per_server'][idx]['ClockChannel'] = channelID
-        with open('Resident-Clock-Defaults.txt', 'w') as outfile:
+        with open('Resident-Clock-Defaults.json', 'w') as outfile:
             json.dump(data, outfile)
             print("wrote to file")
         embedVar = discord.Embed(title="Added Clock Tower:", description=(str(channelID) + ", " + str(offset)), color=0x02f513)
@@ -942,7 +942,7 @@ async def speak(ctx, *, arg):
 @bot.command(name='q_add')
 async def quoteadd(ctx, *, arg):
     if str(ctx.message.author.id) == str(OwnerID):
-        with open('Resident-Clock-Quotes.txt') as json_file:
+        with open('Resident-Clock-Quotes.json') as json_file:
             data = json.load(json_file)
             temp = data['quotes']
             quotenum = len(temp)
@@ -950,7 +950,7 @@ async def quoteadd(ctx, *, arg):
                 (quotenum + 1): arg
             }
             data['quotes'].append(quote)
-            with open('Resident-Clock-Quotes.txt', 'w') as outfile:
+            with open('Resident-Clock-Quotes.json', 'w') as outfile:
                 json.dump(data, outfile)
         embedVar = discord.Embed(title="Quote added:", description=(arg), color=0x02f513)
         await ctx.send(embed=embedVar)
