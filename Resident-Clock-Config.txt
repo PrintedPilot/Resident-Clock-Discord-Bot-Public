@@ -1,0 +1,1 @@
+{"general": [{"bot_token": "<Insert your Bot Token here>"}, {"OwnerID": "<Insert the Bot Owner's Discord ID here>"}, {"WeatherAPI": "<API Key for OpenWeatherMap 5 Day free forecast>"}, {"AQI_API": "<API Key from aqicn.org>"} ]}
