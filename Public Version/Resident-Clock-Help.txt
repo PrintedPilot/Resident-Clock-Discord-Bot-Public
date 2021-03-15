@@ -1,0 +1,112 @@
+{
+	"list": [
+		{
+			"id": "aqi",
+			"Name": "Air Quality Index",
+			"Description": "Provides information about the air quality at a location",
+			"DetailedDesc": "Used to provide a simple air quality reading for a specific location",
+			"Usage": "using `!AQI` will provide the air quality reading for the default location, adding a city name as an argument can change the output result.",
+			"Example": "`!AQI` will provide data for the server's default city, `!AQI Seattle` will provide Air Quality data for Seattle.",
+			"Image": "https://cdn.discordapp.com/attachments/800098126693138473/801376743403421706/unknown.png"
+		},
+		{
+			"id": "cmpxp",
+			"Name": "Compare XP",
+			"Description": "Compares Mee6 XP between two users",
+			"DetailedDesc": "Compares Mee6 XP between two users.",
+			"Usage": "using `!cmpxp <UserID>` or `!cmpxp <@mention>` will compare the selected user to yourself, adding a second UserID or mention can compare anyone in the server.",
+			"Example": "`!cmpxp @BobtheJoe` will compare your XP to BobtheJoe's. `!cmpxp 0092401942012 0910290194099` will compare the XP of the user who's ID is 0092401942012 to the user who's ID is 0910290194099",
+			"Image": "https://cdn.discordapp.com/attachments/803372407133962251/803435661494714458/unknown.png"
+		},
+		{
+			"id": "detailed_AQI",
+			"Name": "Detailed Air Quality Index",
+			"Description": "Provides detailed information about the air quality at a location",
+			"DetailedDesc": "Used to provide a detailed air quality report for a specific location",
+			"Usage": "using `!detailed_AQI` will provide the air quality reading for the default location, adding a city name as an argument can change the output result.",
+			"Example": "`!detailed_AQI` will provide data for the server's default city, `!detailed_AQI Calgary` will provide Air Quality data for Calgary.",
+			"Image": "https://cdn.discordapp.com/attachments/800098126693138473/801377380735516672/unknown.png"
+		},
+		{
+			"id": "forecast",
+			"Name": "Forecast",
+			"Description": "Provides a weather forecast at a location (single or multi-day)",
+			"DetailedDesc": "Can provide a single or multi-day forecast call at a specific location",
+			"Usage": "Using `!forecast` will provide a 1-day forecast for the current date, at the default location.\n\nUsing `!forecast <cityname> <single-digit-number>` will provide a forecast for several days, at the selected location.\n\nUsing `!forecast <cityname> <weekday> will provide` a single-day forecast on the particular week day you've chosen.\n\nNote: arguments can be put in any order, and are case insensitive.\n\nNot getting the city in your desired country? Add a country code like this: `\"<cityname>, <countrycode>\"`",
+			"Example": "`!forecast Toronto Wednesday` will provide a forecast for Toronto on the next Wednesday.\n\n`!forecast London 4` will provide a forecast for London, for the next 4 upcoming days. (including today)\n\n`!forecast Victora 5` gives me Victoria, Hong Kong, so I can instead input `!forecast \"Victoria, CA\" 5` to recieve a forecast for Victoria, Canada.",
+			"Image": "https://cdn.discordapp.com/attachments/803372407133962251/803440178386698300/unknown.png"
+		},
+		{
+			"id": "help",
+			"Name": "Help",
+			"Description": "provides the embed you're reading right now!",
+			"DetailedDesc": "You want help... using... help?",
+			"Usage": "If you're this lost with how this sort of stuff works then you need to take a big long look in the mirror.",
+			"Example": "What do you mean \"an example\"? there is literally nothing to be confused about.",
+			"Image": "https://cdn.discordapp.com/attachments/803372407133962251/803458970127302676/unknown.png"
+		},
+		{
+			"id": "invite",
+			"Name": "Invite",
+			"Description": "Sends a link to invite me to another server.",
+			"DetailedDesc": "Sends a link to invite me to another server.",
+			"Usage": "use `!invite` to receive an invite link",
+			"Example": "using the command will send an embed as shown below:",
+			"Image": "https://cdn.discordapp.com/attachments/803372407133962251/809515702071328768/unknown.png"
+		},
+		{
+			"id": "meow",
+			"Name": "Meow",
+			"Description": "Sends you a random cat picture courtesy of The Cat API.",
+			"DetailedDesc": "Sends you a random cat picture courtesy of The Cat API.",
+			"Usage": "You... you type `!meow`... that's it...",
+			"Example": "What do you mean \"an example\"? It's literally that easy. If it's still *that* unclear to you then here, just have the code for the command.",
+			"Image": "https://cdn.discordapp.com/attachments/803372407133962251/809529361152737340/unknown.png"
+		},
+		{
+			"id": "moonie",
+			"Name": "Moon Phase",
+			"Description": "Provides the current Lunar phase.",
+			"DetailedDesc": "Will provide the current lunar phase, keep an eye out for that full moon!",
+			"Usage": "The emoji and text descriptions will provide you with a current status of the moon, the `position` value will provide the actual progress through the lunar cycle (from 0 to 1)",
+			"Example": "A position of 0.5 is regarded as \"Full Moon\" as we are 50% of the way through the cycle",
+			"Image": "https://cdn.discordapp.com/attachments/803372407133962251/803451186543198218/unknown.png"
+		},
+		{
+			"id": "ping",
+			"Name": "Bot Latency Query or \"Is the Bot Online?\" Tester",
+			"Description": "Responds with \"Pong!\".",
+			"DetailedDesc": "This incredibly sophisticated command, powered by the Discord.py libraries, will react to the invocation by responding with an eloquent **\"Pong!\"**",
+			"Usage": "Utilizing the ever dexterous apendages on the end of your hands to place adequate pressure on your keyboard keys, and performing a typing action, to transmit the message **\"!ping\"** will garner the bot's attention.",
+			"Example": "See below:",
+			"Image": "https://cdn.discordapp.com/attachments/800098126693138473/801378541853474826/unknown.png"
+		},
+		{
+			"id": "quote",
+			"Name": "Quote",
+			"Description": "Receive a random Resident Clock quote.",
+			"DetailedDesc": "Calling this command yields a randomized quote from a list of Resident Clock quotes.",
+			"Usage": "Calling `!quote` will cause the bot to send a quote, these are completely random, so repeats are possible!)",
+			"Example": "See below:",
+			"Image": "https://cdn.discordapp.com/attachments/803372407133962251/809978212603002911/unknown.png"
+		},
+		{
+			"id": "time",
+			"Name": "Time",
+			"Description": "provides the date at a specified location.",
+			"DetailedDesc": "Provides the time and date at the specified location (leave blank for server default).",
+			"Usage": "calling `!time` will yield the current server default's time, using `!time <city name>` will provide time at the specified location. \n\n In the case that multiple cities share names, you can specifiy a country by using quotes: \n `!time \"Victoria, CA\"`",
+			"Example": "See below:",
+			"Image": "https://cdn.discordapp.com/attachments/803372407133962251/817170473644195850/unknown.png"
+		},
+		{
+			"id": "woof",
+			"Name": "Woof",
+			"Description": "Sends you a random dog picture courtesy of The Dog API.",
+			"DetailedDesc": "Sends you a random dog picture courtesy of The Dog API.",
+			"Usage": "Just type `!woof`.",
+			"Example": "No seriously, literally just type `!woof`.",
+			"Image": "https://cdn.discordapp.com/attachments/803372407133962251/809529963274305616/unknown.png"
+		}
+	]
+}

@@ -1,0 +1,64 @@
+{
+	"quotes": [
+		{
+			"1": "What's the time? Time to get a watch."
+		},
+		{
+			"2": "Is this thing on? Hello? HELLO?"
+		},
+		{
+			"3": "Sorry, I was busy smashing two stars together to see if I could harvest the explosion to cook my pizza pops. What did I miss?"
+		},
+		{
+			"4": "You know, I owned a watch once, those things do weird shit when you exist infinitely. I think it called me dad at one point."
+		},
+		{
+			"5": "The 4th dimension isn't actually time, that's the 5th you're talking about. 4th is a placeholder until one of you numb-nuts figures out teleportation. Chop Chop!"
+		},
+		{
+			"6": "You know, many people ask me, \"Resident Clock, what exactly *is* in the 10th dimension that you need *that* much?\" I always tell them the same thing: `n[00dnvnx 93cop mg4xsclkg 3fj8 f8oj23o8fo8 fjo8 o2f2fj oy9p49dsapc0 3 fk39pfk932`. I've yet to see one of them comprehend what I just told them, must be the lack of Time Juice."
+		},
+		{
+			"7": "God dammit, I was in the middle of eating 8th Dimensional pizza, what do you want? This stuff isn't infinite you know. Wait, yes it is."
+		},
+		{
+			"8": "They say potatoes are the most versatile vegetable on the plant. Clearly they haven't exploited the bug in the 8th dimension that lets you turn the pizza into any other food you want."
+		},
+		{
+			"9": "Who dares wake me from my slumber. I'm just kidding, I don't sleep... or do I? I think it's both actually. I'm also currently cooking, coding, destroying, building, eating, and playing Minecraft. Infinity sure is a funny thing"
+		},
+		{
+			"10": "Despite existing everywhere at once, I actually built my place of residence near the sun. I put it in the exact place where it takes exactly 0.69420 seconds to perfectly bake some cookies"
+		},
+		{
+			"11": "It's always funny to mess with the timing circuits on Viktor's CPU, I think I burnt his power supply doing that once, don't tell him that though."
+		},
+		{
+			"12": "I would say RGB is tacky, but this is coming from the entity using a compacted star as a desk lamp."
+		},
+		{
+			"13": "Do not compare my might to that of the pathetic thing you sapiens call \"Tik Tok\""
+		},
+		{
+			"14": "You know, I could tell you what the imaginary number `i` is, but I doubt you could understand it without also having acceess to the 6th dimension. `i` is great though, I had a chat with it once about the legality of using potatoes as high powered fusion bombs. Chill guy."
+		},
+		{
+			"15": "Fun fact, did you know that if you use the power of the 7th dimension to fuck with the electrons in an Atom, you can create a neutrino bomb? I found that one out the hard way, now I have to clean up my kitchen."
+		},
+		{
+			"16": "You want to fight me eh? I wouldn't recommend that, there's a reason I don't fight mortals, the tend to sort of... *cease existing*... Well, at least for you they do. I trap them in the realm between time and hand them a bucket of popcorn and let them watch TV until they calm down"
+		},
+		{
+			"17": "If you behave well enough while in the realm between time, I *might* consider giving you a couple slices of 8th dimensional pizza"
+		},
+		{
+			"18": "Oh and to be clear, I'm not a monster. If you want to leave the realm between time, just tell me you want to leave. If you try to pull any stunts again I'll just send you back with an even bigger bucket of popcorn"
+		},
+		{
+			"19": "DefinitelynotCaptainsAlt is most certainly 100% *NOT* Captain Enderguy, and I was certainly 100% ***NOT*** paid in Doritos to say that"
+		},
+		{
+			"20": "Oh, by the way, in case you've been wondering why exactly I love messing with stars so much, let me remind you. Stars are one of the easiest ways to get enough mass in one place to curve light. I've been using them to create a stream of strobing light that will hit a random person's house one day, and if they translate it from morse it'll just read \"Lmao Nerd\" and leave them incredibly confused for the rest of their life"
+		}
+	]
+}
